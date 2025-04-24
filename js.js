@@ -41,6 +41,12 @@ $(document).ready(function () {
         if ($(activeSection).hasClass('slide8')) {
           activateEighthSlide();
         }
+
+        if ($(activeSection).hasClass('slide9')) {
+          activateNinthSlide();
+        }
+        
+        
         
         
       }
@@ -277,6 +283,10 @@ $(document).ready(function () {
       opacity: 0,
       duration: 0.8
     }, 0)
+    .to(".section8", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
     .to(".strategyBox.index3 .imgBox", {
       opacity: 1,
       duration: 0.8
@@ -299,10 +309,36 @@ $(document).ready(function () {
       opacity: 0,
       duration: 0.8
     }, 0)
+    .to(".section9 .bgBox", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
+    .to(".section9 .firstBox", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
     .to(".section8", {
       opacity: 1,
       duration: 0.8
     }, 0)
+  }
+
+
+  const activateNinthSlide = () => {
+    gsap.timeline()
+    .to(".section8", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
+    .to(".section9 .bgBox", {
+      opacity: 1,
+      duration: 0.8
+    }, 0)
+    .to(".section9 .firstBox", {
+      opacity: 1,
+      duration: 0.8
+    }, 0)
+
   }
 
   
