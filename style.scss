@@ -1,0 +1,432 @@
+/* 언어설정 */
+@charset "UTF-8";
+
+/* 폰트설정 */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Medium';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-ExtraBold';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Black';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+/* 변수설정 */
+:root {
+  --main-color: #FF5722;
+  --pretendard-regular: 'Pretendard-Regular', sans-serif;
+  --pretendard-medium: 'Pretendard-Medium', sans-serif;
+  --pretendard-semiBold: 'Pretendard-SemiBold', sans-serif;
+  --pretendard-bold: 'Pretendard-Bold', sans-serif;
+  --pretendard-extrabold: 'Pretendard-ExtraBold', sans-serif;
+  --pretendard-black: 'Pretendard-Black', sans-serif;
+  --gmarket-light: 'GmarketSansLight', sans-serif;
+  --gmarket-medium: 'GmarketSansMedium', sans-serif;
+  --gmarket-bold: 'GmarketSansBold', sans-serif;
+}
+
+/* 전체설정 */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #0d0d0d;
+}
+ul, ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  vertical-align: bottom;
+}
+body {
+  font-family: var(--pretendard-regular);
+}
+
+.section {
+  width: 100vw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+}
+
+.swiper {
+  height: 100dvh;
+}
+
+
+
+
+/* section1 설정*/
+.section1Bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100dvh;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.section1Bg img {
+  width: 100%;
+}
+.section1 .txtBox {
+  display: flex;
+  position: absolute;
+  bottom: 10vh;
+  left: 5vw;
+  flex-direction: column;
+}
+.section1 .title1 h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 75px;
+}
+.section1 .title1 p {
+  color: #fff;
+}
+.section1 .title2 {
+  color: #fff;
+  font-family: var(--pretendard-black);
+  font-size: 127px;
+  padding-bottom: 10px;
+}
+.section1 .bigA {
+  color: #fff;
+  display: inline-block;
+  transition: all 0.05s;
+}
+
+.section1 .title3 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+
+/* section2 설정*/
+.section2 .txtBox {
+   width: fit-content;
+   position: absolute;
+   top: 40%;
+   left: 30%;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+}
+.section2Title {
+  display: flex;
+  align-items: center;
+}
+.section2Title h3 {
+  color: var(--main-color);
+  font-size: 65px;
+  font-family: var(--pretendard-bold);
+  display: inline-block;
+  
+}
+.section2Bulb {
+  width: 100px;
+  padding-bottom: 20px;
+}
+.section2Description {}
+.section2Description p {
+  color: #99847E;
+  font-size: 40px;
+  font-family: var(--pretendard-bold);
+  padding-bottom: 7px;
+}
+.section2Description span {
+  color: var(--main-color);
+  font-size: 50px;
+  font-family: var(--pretendard-bold);
+  padding-right: 8px;
+}
+.section2CloudBox {
+  width: 40vw;
+  height: 70vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.section2Cloud {
+  position: absolute;
+}
+.section2Cloud.index0 {
+  right: -5%;
+  top: 10%;
+  transform: scale(0.8);
+}
+.section2Cloud.index1 {
+  left: 0;
+  top: 55%;
+  transform: scale(0.9);
+}
+
+
+/* section3 설정*/
+.section3 video {
+  width: 100vw;
+  transform: scaleX(-100%);
+  opacity: 0;
+}
+.section3 .txtBox {
+  width: fit-content;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.section3 .txtBox p {
+  color: #fff;
+  font-size: 40px;
+  font-family: var(--pretendard-bold);
+  padding-bottom: 10px;
+}
+.section3 .txtBox p span {
+  color: var(--main-color);
+  font-size: 50px;
+  font-family: var(--pretendard-bold);
+  padding-right: 8px;
+}
+
+
+/* section4 설정*/
+.section4 .spotlightBg {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  opacity: 0;
+}
+.section4 .spotlightBg img {
+  position: absolute;
+  bottom: -60%;
+}
+.strategyBox {
+
+}
+.strategyBox .imgBox {
+  position: absolute;
+  top: 50%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.strategyBox .imgBox img {}
+.strategyBox .txtBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  right: 37%;
+  transform: translate(50%, -50%);
+  opacity: 0;
+}
+.strategyBox.index0 .txtBox {
+  width: 560px;
+}
+.strategyBox.index1 .txtBox {
+  width: 650px;
+}
+.strategyBox.index2 .txtBox {
+  width: 600px;
+}
+.strategyBox.index3 .txtBox {
+  width: 700px;
+}
+.strategyBox .txtBox .indexBox {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 70px;
+}
+.strategyBox .txtBox .index {
+  color: #fff;
+  font-size: 26px;
+}
+.strategyBox .txtBox .bar {
+  background-color: var(--main-color);
+  width: 100%;
+  height: 2px;
+}
+.strategyBox .txtBox .title {
+  padding-bottom: 70px;
+}
+.strategyBox .txtBox .title p {
+  color: #fff;
+  font-size: 58px;
+  font-family: var(--pretendard-bold);
+}
+.strategyBox .txtBox .title span {
+  color: var(--main-color);
+}
+.strategyBox .txtBox .description {}
+.strategyBox .txtBox .description p {
+  color: #fff;
+  font-size: 20px;
+  font-family: var(--pretendard-semiBold);
+  word-break: keep-all;
+  line-height: 1.4;
+}
+.strategyBox .txtBox .description span {
+  color: var(--main-color);
+}
+
+
+/* section8 설정*/
+.section8 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  opacity: 0;
+}
+.section8 .center {
+  width: fit-content;
+}
+.section8 .title {
+  padding-bottom: 60px;
+}
+.section8 .title h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.section8 .title h3 span {
+  font-family: var(--pretendard-bold);
+  color: var(--main-color);
+}
+.section8 .title h3 span.small {
+  font-size: 32px;
+}
+.section8 .title h3 span.big {
+  font-size: 50px;
+}
+.section8 .bottomBox {
+  display: flex;
+  gap: 40px;
+}
+.section8 .card {
+  background-color: #fff;
+  width: 420px;
+  border-radius: 28px;
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -1px -1px 29px 0px rgba(255,87,34,0.3);
+  -webkit-box-shadow: -1px -1px 29px 0px rgba(255,87,34,0.3);
+  -moz-box-shadow: -1px -1px 29px 0px rgba(255,87,34,0.3);
+}
+.section8 .card img {
+  width: 150px;
+}
+.section8 .card .txtBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section8 .card .subTitle {
+  text-align: center;
+  color: var(--main-color);
+  font-family: var(--pretendard-bold);
+  font-size: 28px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.section8 .card .description {
+  width: 68%;
+}
+.section8 .card .description li {
+  text-align: center;
+  word-break: keep-all;
+  color: #565656;
+  font-family: var(--pretendard-medium);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+
+/* section9 설정 */
+.section9 .bgBox {
+  width: 100%;
+}
+.section9 .bgBox img {
+  width: 100%;
+}
+.section9 .firstBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.section9 .firstBox .txtBox {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+.section9 .firstBox .txtBox .completeBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.section9 .firstBox .txtBox span {
+  color: #fff;
+  font-size: 46px;
+  font-family: var(--pretendard-bold);
+}
+.section9 .firstBox .txtBox span.small {
+  
+}
+.section9 .firstBox .txtBox .complete {
+  font-size: 65px;
+  color: var(--main-color);
+  font-family: var(--pretendard-bold);
+}
+.section9 .firstBox p {
+  color: #fff;
+  font-size: 46px;
+  font-family: var(--pretendard-bold);
+}
