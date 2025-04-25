@@ -1,4 +1,6 @@
-$(document).ready(function () {
+window.addEventListener('DOMContentLoaded', function () {
+
+
   const swiper = new Swiper('.swiper', {
     direction: 'vertical',
     slidesPerView: 1,
@@ -8,50 +10,33 @@ $(document).ready(function () {
     },
     on: {
       slideChangeTransitionStart: function () {
-        const activeSection = $('.swiper-slide-active')
+        const activeSection = document.querySelector('.swiper-slide-active');
+        const slideFunctions = {
+          slide1: activateFirstSlide,
+          slide2: activateSecondSlide,
+          slide3: activateThirdSlide,
+          slide4: activateFourthSlide,
+          slide5: activateFifthSlide,
+          slide6: activateSixthSlide,
+          slide7: activateSeventhSlide,
+          slide8: activateEighthSlide,
+          slide9: activateNinthSlide,
+          slide10: activateTenthSlide,
+        };
 
-        if (activeSection.hasClass('slide1')) {
-          activateFirstSlide();
-        }
-
-        if ($(activeSection).hasClass('slide2')) {
-          activateSecondSlide();
-        }
-
-        if ($(activeSection).hasClass('slide3')) {
-          activateThirdSlide();
-        }
-
-        if ($(activeSection).hasClass('slide4')) {
-          activateFourthSlide();
-        }
-
-        if ($(activeSection).hasClass('slide5')) {
-          activateFifthSlide();
-        }
-
-        if ($(activeSection).hasClass('slide6')) {
-          activateSixthSlide();
-        }
-        
-        if ($(activeSection).hasClass('slide7')) {
-          activateSeventhSlide();
-        }
-
-        if ($(activeSection).hasClass('slide8')) {
-          activateEighthSlide();
-        }
-
-        if ($(activeSection).hasClass('slide9')) {
-          activateNinthSlide();
-        }
-        
+        Object.keys(slideFunctions).forEach((slideClass) => {
+          if (activeSection.classList.contains(slideClass)) {
+            slideFunctions[slideClass]();
+          }
+        });
         
         
         
       }
     }
   });
+
+
 
   const activateFirstSlide = () => {
     gsap.killTweensOf([
@@ -330,6 +315,22 @@ $(document).ready(function () {
       opacity: 0,
       duration: 0.8
     }, 0)
+    .to(".section9 .secondBox", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
+    .to("footer", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
+    .to(".linkBtn", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
+    .to(".topBtn", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
     .to(".section9 .bgBox", {
       opacity: 1,
       duration: 0.8
@@ -338,12 +339,53 @@ $(document).ready(function () {
       opacity: 1,
       duration: 0.8
     }, 0)
-
   }
 
+
+  const activateTenthSlide = () => {
+    gsap.timeline()
+    .to(".section9 .firstBox", {
+      opacity: 0,
+      duration: 0.8
+    }, 0)
+    .to(".section9 .secondBox", {
+      opacity: 1,
+      duration: 0.8
+    }, 0)
+    .to(".linkBtn", {
+      opacity: 1,
+      duration: 0.8
+    }, 0)
+    .to(".topBtn", {
+      opacity: 1,
+      duration: 0.8
+    }, 0)
+    .to("footer", {
+      opacity: 1,
+      duration: 0.8
+    }, 0)
+  }
   
 
-  
+
+  // 가맹문의 페이지 이동 버튼 클릭 애니메이션
+  const linkBtn = document.querySelector('.linkBtn');
+  linkBtn.addEventListener('click', () => {
+    // on class 추가
+    linkBtn.classList.add('on');
+    setTimeout(() => {
+      linkBtn.classList.remove('on');
+    }, 100);
+  });
+  // top 버튼 클릭 애니메이션
+  const topBtn = document.querySelector('.topBtn');
+  topBtn.addEventListener('click', () => {
+    // on class 추가
+    topBtn.classList.add('on');
+    setTimeout(() => {
+      topBtn.classList.remove('on');
+    }, 100);
+  });
 
 
-})
+});
